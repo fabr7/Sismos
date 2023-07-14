@@ -14,7 +14,7 @@ def load_data_from_api(*args, **kwargs):
     """
     base_url = "https://earthquake.usgs.gov/fdsnws/event/1/query?"
     start_year = 2018
-    end_year = 2024
+    end_year = 2019
 
     data_list = []
 

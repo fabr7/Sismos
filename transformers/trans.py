@@ -1,3 +1,4 @@
+
 if 'transformer' not in globals():
     from mage_ai.data_preparation.decorators import transformer
 if 'test' not in globals():
@@ -19,14 +20,23 @@ def transform(data, *args, **kwargs):
     Returns:
         Anything (e.g. data frame, dictionary, array, int, str, etc.)
     """
-    # Specify your transformation logic here
+    chile = ['Chile']
+    japon = ['Japan']
+    us_estados = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado',
+             'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho',
+             'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+             'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+             'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada',
+             'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina',
+             'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+             'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah',
+             'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
+
+    # Reemplazar valores NaN con cadena vacía
+    data['Lugar'] = data['Lugar'].fillna('')
+
+    # Filtrar por países y estados
+    data = data[data['Lugar'].str.contains('|'.join(chile + japon + us_estados))]
 
     return data
 
-
-@test
-def test_output(output, *args) -> None:
-    """
-    Template code for testing the output of the block.
-    """
-    assert output is not None, 'The output is undefined'
