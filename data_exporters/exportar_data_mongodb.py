@@ -15,9 +15,10 @@ if 'data_exporter' not in globals():
 def export_data_to_mongodb(df: DataFrame, **kwargs) -> None:
     connection_string = "mongodb+srv://copito:golazo@cluster1.krfn9qj.mongodb.net/"
     client = MongoClient(connection_string)
-    db = client["12"]
-    collection = db["1"]
+    db = client["hola"]
+    collection = db["0"]
     collection.insert_many(df.to_dict('records'))
+   
 
     
 
