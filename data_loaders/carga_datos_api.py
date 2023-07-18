@@ -16,8 +16,8 @@ uri = f"mongodb+srv://copito:golazo@cluster1.krfn9qj.mongodb.net/?retryWrites=tr
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 # Seleccionar la base de datos y la colección correspondientes
-db = client["hola"]
-collection = db["0"]
+db = client["Sismos"]
+collection = db["prueba"]
 
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader

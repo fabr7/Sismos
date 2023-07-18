@@ -56,7 +56,7 @@ blocks:
   language: python
   name: Exportar_Data_MongoDB
   retry_config: null
-  status: failed
+  status: updated
   type: data_exporter
   upstream_blocks:
   - only_earthquake
@@ -73,6 +73,6 @@ name: sismos
 notification_config: {}
 spark_config: {}
 type: python
-updated_at: '2023-07-18 19:37:04'
+updated_at: '2023-07-18 20:00:10'
 uuid: sismos
 widgets: []
